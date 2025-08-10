@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -O3 -march=native -rdynamic CMakeFiles/SDFcarve.dir/main.cpp.o CMakeFiles/SDFcarve.dir/makelevelset3.cpp.o -o bin/SDFcarve 

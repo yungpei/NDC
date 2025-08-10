@@ -1,0 +1,3 @@
+/mnt/c/Users/cg/NDC/data_utils/get_exact_sign_voxel/CMakeFiles/VOXGen.dir
+/mnt/c/Users/cg/NDC/data_utils/get_exact_sign_voxel/CMakeFiles/edit_cache.dir
+/mnt/c/Users/cg/NDC/data_utils/get_exact_sign_voxel/CMakeFiles/rebuild_cache.dir

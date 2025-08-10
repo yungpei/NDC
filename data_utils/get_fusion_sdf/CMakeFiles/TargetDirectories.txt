@@ -1,0 +1,3 @@
+/mnt/c/Users/cg/NDC/data_utils/get_fusion_sdf/CMakeFiles/SDFcarve.dir
+/mnt/c/Users/cg/NDC/data_utils/get_fusion_sdf/CMakeFiles/edit_cache.dir
+/mnt/c/Users/cg/NDC/data_utils/get_fusion_sdf/CMakeFiles/rebuild_cache.dir

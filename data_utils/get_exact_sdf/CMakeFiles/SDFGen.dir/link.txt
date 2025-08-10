@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -O3 -march=native -rdynamic CMakeFiles/SDFGen.dir/main.cpp.o CMakeFiles/SDFGen.dir/makelevelset3.cpp.o -o bin/SDFGen 
