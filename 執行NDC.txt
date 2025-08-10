@@ -1,0 +1,59 @@
+加速測試是否程式碼能順利跑完整個 epoch，可以加上 --epoch 1 減少訓練輪數：
+python main.py --train_float --input_type sdf --method ndc --epoch 1 --lr_half_life 100 --data_dir ./groundtruth/gt_NDC --checkpoint_save_frequency 50
+
+
+Non-trivial Total# 8542 sdf False True
+Total# test 1071 sdf True True
+Non-trivial Total# 1071 sdf True True
+Epoch 1/400 開始...
+Setting learning rate to 0.0001
+
+這表示：
+資料載入成功（8542 個訓練樣本，1071 個測試樣本）
+程式已經進入訓練的 第 1 個 epoch
+已設定好初始學習率為 0.0001
+
+
+
+1. 建立 ndc 虛擬環境：
+>conda create -n ndc python=3.10 -y
+
+啟動：
+>conda activate ndc
+
+(ndc) C:\Users\cg>git clone https://github.com/czq142857/NDC.git
+
+(ndc) C:\Users\panda>cd NDC
+
+2. 安裝套件：
+(ndc) C:\Users\cg>pip install numpy
+(ndc) C:\Users\cg>pip install h5py
+(ndc) C:\Users\cg>pip install scipy
+(ndc) C:\Users\cg>pip install scikit-learn
+(ndc) C:\Users\cg>pip install trimesh
+(ndc) C:\Users\cg>pip install Cython
+
+<修復 pip 以解決所有安裝錯誤>
+下載 get-pip.py：https://bootstrap.pypa.io/get-pip.py 到桌面
+
+cd %USERPROFILE%\Desktop
+python get-pip.py --force-reinstall
+
+3. 編譯：
+(ndc) C:\Users\cg\NDC>python setup.py build_ext --inplace
+
+4. 安裝pytorch：
+pip install torch torchvision torchaudio
+
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia （GPU版）
+降級：
+pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+
+5. 下載安裝 visual studio 2022
+
+容錯問題：
+
+1. 降級 NumPy：pip install numpy==1.24.4
+
+
+
