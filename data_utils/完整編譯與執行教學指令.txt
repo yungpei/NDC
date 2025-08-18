@@ -1,5 +1,3 @@
-寫 WSL Ubuntu 裡的完整編譯與執行教學指令
-
 1. 安裝 WSL (Windows Subsystem for Linux) 與 Ubuntu
 
 在 Windows Powershell (管理員) 執行：wsl --install
@@ -14,7 +12,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential cmake git
 
 進入 NDC 專案資料夾
-專案路徑是 E:\wu\NDC ， WSL 裡對應路徑是 /mnt/e/wu/NDC：cd /mnt/e/wu/NDC/data_utils
+ WSL 裡對應路徑是 /mnt/e/wu/NDC：cd /mnt/c/Users/cg/NDC/data_utils
 
 編譯每個需要的子資料夾
 以 get_exact_sdf 為例：
@@ -27,7 +25,6 @@ make
 對其他資料夾同樣操作，例如：
 
 cd ../get_exact_intersections
-cd get_exact_intersections
 cmake .
 make
 
@@ -43,24 +40,7 @@ cd ../get_fusion_sdf
 cmake .
 make
 
-執行產生 sdf、binvox 等檔案的指令
-假設你已把 .obj 檔案放到適當資料夾，依照 get_gt_LOD.py 的用法，你需要執行：
-
-(base) cg@DESKTOP-QGNGKIV:/mnt/e/wu/NDC$ cd data_utils
-(base) cg@DESKTOP-QGNGKIV:/mnt/e/wu/NDC/data_utils$ cd get_exact_intersections
-(base) cg@DESKTOP-QGNGKIV:/mnt/e/wu/NDC/data_utils/get_exact_intersections_with_normals$ cd bin
-
-./VOXGen model.obj 1024 0
-./SDFGen model.obj 512 0
-./IntersectionXYZpn model.obj 512 0
-
-./VOXGen model.obj 512 0
-./SDFGen model.obj 512 0
-./IntersectionXYZpn model.obj 512 0
-
-./SDFcarve model.obj 512 0
-./IntersectionXYZ model.obj 512 0
-
+修改 heart_obj_list.txt：將要跑的資料名稱更新在txt檔案裏面。
 
 執行 Python 腳本
 確定你在 WSL Ubuntu 裡有 Python 環境（建議用 Anaconda 或直接用系統 Python）
@@ -69,23 +49,6 @@ make
 sudo apt install python3 python3-pip
 pip3 install numpy
 
-進入你的 get_groundtruth_NDC 目錄： cd /mnt/e/wu/NDC/data_preprocessing/get_groundtruth_NDC
+
+進入你的 get_groundtruth_NDC 目錄： cd /mnt/c/Users/cg/NDC/data_preprocessing/get_groundtruth_NDC
 執行：python3 get_gt_LOD.py
-
-
-
-
-(ndc) E:\wu\NDC\data_preprocessing\get_groundtruth_NDC>python get_gt_LOD.py
-0 0 16
-0    0 / 1 0 ../../objs/pid_02_gt_512_ndc_voxel/model.binvox
-False False False
-voxel_size: 1024
-cell_voxel_size: 2
-finished
-returned 0 / 1
-
-Datasets in file:
-512_float
-512_int
-512_sdf
-512_voxel
